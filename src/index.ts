@@ -1,7 +1,9 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import authorRoutes from './routes/author.ts'
 
 const app = new Hono()
+app.route("/authors", authorRoutes )
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
